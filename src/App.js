@@ -24,6 +24,9 @@ export default function App() {
           <Route path="/profile">
             <Profile />
           </Route>
+          <Route path="/signup" component={SignUp} />
+          <Route path="/accounts/password/reset" component={ResetPassword} />
+          <Route path="/login" component={SignIn} />
           <Route path="/*">
             <Home />
           </Route>

@@ -107,6 +107,8 @@ export default function Navbar() {
                 <Link to="profile">
                   Profile <span className="sr-only">(current)</span>
                 </Link>
+                <Link to="login">Login</Link>
+                <Link to="signup">Signup</Link>
               </li>
             </ul>
             <form
