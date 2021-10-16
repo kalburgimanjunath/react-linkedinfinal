@@ -1,9 +1,21 @@
-import React, { useState } from 'react';
-import { auth, signInWithEmailAndPassword, signInWithGoogle } from './firebase';
+import React, { useEffect, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { auth } from '../_helpers/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
+
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [user, loading, error] = useAuthState(auth);
+  const history = useHistory();
+
+  useEffect(() => {
+    if (loading) {
+      // maybe trigger a loading screen
+      return;
+    }
+    if (user) history.replace('/dashboard');
+  }, [user, loading]);
   return (
     <div className="login">
       <div className="login__container">

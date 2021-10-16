@@ -4,4 +4,5 @@ import Home from './Home';
 import Notification from './Notification';
 import Profile from './Profile';
 import Login from './Login';
-export { Chat, Explore, Home, Notification, Profile, Login };
+import Signup from './Signup';
+export { Chat, Explore, Home, Notification, Profile, Login, Signup };
